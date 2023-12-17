@@ -15,9 +15,9 @@ public class Main {
 //            }
 
         LinkedList<Integer> list = new LinkedList<>();
-        list.addAtHead(70);
-        list.addAtHead(30);
-        list.addAtHead(56);
+        list.addAtTail(70);
+        list.addAtTail(30);
+        list.addAtTail(56);
         System.out.println(list);
         }
     }

@@ -27,6 +27,16 @@ public class LinkedList<T> {
             head = node;
         }
     }
+    public void addAtTail(T data) {
+        Node<T> node = new Node<>(data);
+        if (head == null) {
+            head = node;
+        } else {
+            tail.next = node;
+        }
+        tail = node;
+    }
+
 
     @Override
     public String toString() {
