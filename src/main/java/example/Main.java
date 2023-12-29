@@ -18,6 +18,7 @@ public class Main {
         list.addAtTail(70);
         list.addAtTail(30);
         list.addAtTail(56);
+        list.insertAt(2,77);
         System.out.println(list);
         }
     }
