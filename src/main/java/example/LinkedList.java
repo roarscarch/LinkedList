@@ -131,4 +131,28 @@ public class LinkedList<T> {
         }
         return null; // Value not found in the LinkedList
     }
+
+    public void insertAfter(T existingValue, T newValue) {
+        Node<T> newNode = new Node<>(newValue);
+
+        if (head != null) {
+            Node<T> current = head;
+            while (current != null) {
+                if (current.data.equals(existingValue)) {
+                    newNode.next = current.next;
+                    current.next = newNode;
+
+                    if (current == tail) {
+                        // If inserting after the tail, update the tail to the new node
+                        tail = newNode;
+                    }
+
+                    break;
+                }
+                current = current.next;
+            }
+        } else {
+            System.out.println("Cannot insert after in an empty list.");
+        }
+    }
 }

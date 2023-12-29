@@ -1,5 +1,9 @@
 package example;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.sql.SQLOutput;
+
 public class Main {
     public static void main(String[] args) {
 //            Node<Integer> node1 = new Node<>(56);
@@ -25,11 +29,18 @@ public class Main {
         System.out.println(list);
         list.popLast();
         System.out.println(list);
+        list.insertAfter(30,677);
+
+
         if(list.search(677)==null){
             System.out.println("Data Not found");
         }
         else{
             System.out.println("Data Found");
         }
+
+        System.out.println(list);
         }
+
+
     }
