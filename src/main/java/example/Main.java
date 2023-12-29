@@ -40,9 +40,18 @@ public class Main {
         }
 
         System.out.println(list);
+
+        LinkedList<Integer>list2= new LinkedList<>();
         list.delete(30);
         System.out.println(list);
+        list2.addInOrder(86);
+        list2.addInOrder(23);
+        list2.addInOrder(767);
+        System.out.println(list2);
+
         }
+
+
 
 
     }

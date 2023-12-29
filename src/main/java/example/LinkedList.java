@@ -7,7 +7,7 @@ package example;
 *
 * */
 
-public class LinkedList<T> {
+public class LinkedList<T extends Comparable> {
     Node<T> head;
     Node<T> tail;
 
@@ -187,6 +187,35 @@ public class LinkedList<T> {
             }
         } else {
             System.out.println("Cannot delete from an empty list.");
+        }
+    }
+
+    public void addInOrder(T data) {
+        Node<T> newNode = new Node<>(data);
+
+        if (head == null || data.compareTo(head.data) < 0) {
+            // If the list is empty or the new data is smaller than the head, insert at the head
+            newNode.next = head;
+            head = newNode;
+
+            if (tail == null) {
+                // If the list was empty, update the tail to the new node
+                tail = newNode;
+            }
+        } else {
+            Node<T> current = head;
+
+            while (current.next != null && data.compareTo(current.next.data) >= 0) {
+                current = current.next;
+            }
+
+            newNode.next = current.next;
+            current.next = newNode;
+
+            if (current == tail) {
+                // If inserting after the tail, update the tail to the new node
+                tail = newNode;
+            }
         }
     }
 }
