@@ -15,10 +15,13 @@ public class Main {
 //            }
 
         LinkedList<Integer> list = new LinkedList<>();
+        list.pop();
         list.addAtTail(70);
         list.addAtTail(30);
         list.addAtTail(56);
         list.insertAt(2,77);
+        System.out.println(list);
+        list.pop();
         System.out.println(list);
         }
     }

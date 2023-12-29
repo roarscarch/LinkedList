@@ -87,4 +87,16 @@ public class LinkedList<T> {
         }
         return linkedList.toString();
     }
+
+    public void pop() {
+        if (head != null) {
+            head = head.next;
+            if (head == null) {
+                // If the list becomes empty after popping, update the tail to null.
+                tail = null;
+            }
+        } else {
+            System.out.println("Cannot pop from an empty list.");
+        }
+    }
 }
