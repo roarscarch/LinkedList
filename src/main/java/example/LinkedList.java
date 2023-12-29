@@ -121,4 +121,14 @@ public class LinkedList<T> {
             System.out.println("Cannot pop from an empty list.");
         }
     }
+    public Node<T> search(T value) {
+        Node<T> current = head;
+        while (current != null) {
+            if (current.data.equals(value)) {
+                return current; // Found the node with the specified value
+            }
+            current = current.next;
+        }
+        return null; // Value not found in the LinkedList
+    }
 }

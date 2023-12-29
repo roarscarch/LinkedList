@@ -25,5 +25,11 @@ public class Main {
         System.out.println(list);
         list.popLast();
         System.out.println(list);
+        if(list.search(677)==null){
+            System.out.println("Data Not found");
+        }
+        else{
+            System.out.println("Data Found");
+        }
         }
     }
