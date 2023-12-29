@@ -40,6 +40,8 @@ public class Main {
         }
 
         System.out.println(list);
+        list.delete(30);
+        System.out.println(list);
         }
 
 

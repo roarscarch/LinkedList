@@ -155,4 +155,38 @@ public class LinkedList<T> {
             System.out.println("Cannot insert after in an empty list.");
         }
     }
+
+    public void delete(T value) {
+        if (head != null) {
+            // Handle the case where the value to delete is the head
+            if (head.data.equals(value)) {
+                head = head.next;
+                if (head == null) {
+                    // If the list becomes empty after deletion, update the tail to null
+                    tail = null;
+                }
+                return;
+            }
+
+            // Traverse the list to find the node before the node with the specified value
+            Node<T> current = head;
+            while (current.next != null && !current.next.data.equals(value)) {
+                current = current.next;
+            }
+
+            if (current.next != null) {
+                // Update the next reference to skip the node with the specified value
+                current.next = current.next.next;
+
+                if (current.next == null) {
+                    // If the deleted node was the tail, update the tail to the previous node
+                    tail = current;
+                }
+            } else {
+                System.out.println("Value " + value + " not found in the list.");
+            }
+        } else {
+            System.out.println("Cannot delete from an empty list.");
+        }
+    }
 }
