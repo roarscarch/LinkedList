@@ -99,4 +99,26 @@ public class LinkedList<T> {
             System.out.println("Cannot pop from an empty list.");
         }
     }
+
+    public void popLast() {
+        if (head != null) {
+            if (head == tail) {
+                // If there's only one element in the list, both head and tail should be null after removal.
+                head = null;
+                tail = null;
+            } else {
+                // Traverse the list to find the second-to-last node
+                Node<T> current = head;
+                while (current.next != tail) {
+                    current = current.next;
+                }
+
+                // Update the tail and remove the last node
+                tail = current;
+                tail.next = null;
+            }
+        } else {
+            System.out.println("Cannot pop from an empty list.");
+        }
+    }
 }
